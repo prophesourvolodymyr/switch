@@ -12,7 +12,7 @@ struct OnboardingView: View {
                         .frame(width: 56, height: 56)
                 }
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Switch")
+                    Text("SwitchinTosh")
                         .font(.system(size: 16, weight: .semibold))
                     Text(model.requiresScreenCapture ? "Two permissions before you can switch windows." : "One permission before you can switch windows.")
                         .font(.system(size: 12))
@@ -24,7 +24,7 @@ struct OnboardingView: View {
             VStack(spacing: 8) {
                 row(
                     name: "Accessibility",
-                    detail: "Lets Switch intercept ⌘-Tab and ⌥-`.",
+                    detail: "Lets SwitchinTosh intercept ⌘-Tab and ⌥-`.",
                     granted: model.accessibility,
                     open: model.openAccessibility
                 )
@@ -43,7 +43,7 @@ struct OnboardingView: View {
                         .foregroundStyle(.green)
                         .font(.system(size: 12, weight: .medium))
                 } else {
-                    Text("Click Open Settings, then toggle Switch on. This window updates automatically.")
+                    Text("Click Open Settings, then toggle SwitchinTosh on. This window updates automatically.")
                         .font(.system(size: 11))
                         .foregroundStyle(.secondary)
                 }

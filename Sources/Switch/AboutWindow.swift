@@ -22,7 +22,7 @@ final class AboutWindow {
             backing: .buffered,
             defer: false
         )
-        win.title = "About Switch"
+        win.title = "About SwitchinTosh"
         win.contentMinSize = NSSize(width: 380, height: 360)
         win.contentViewController = host
         win.center()
@@ -66,7 +66,7 @@ struct AboutView: View {
                     .shadow(color: .black.opacity(0.35), radius: 8, y: 4)
             }
             VStack(spacing: 4) {
-                Text("Switch")
+                Text("SwitchinTosh")
                     .font(.system(size: 22, weight: .semibold))
                 Text("Version \(BuildInfo.versionLine)")
                     .font(.system(size: 11))

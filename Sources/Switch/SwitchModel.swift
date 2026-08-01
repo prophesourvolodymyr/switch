@@ -8,6 +8,7 @@ final class SwitchModel: ObservableObject {
     @Published var mode: HotkeyManager.Mode = .allWindows
     @Published var visible: Bool = false
     @Published var thumbnails: [CGWindowID: NSImage] = [:]
+    @Published var browserTabs: [BrowserTab] = []
     @Published var filterText: String = ""
     @Published var panelSize = CGSize(width: 880, height: 560)
 
@@ -31,8 +32,19 @@ final class SwitchModel: ObservableObject {
         let scored: [(WindowInfo, Int)] = windows.compactMap { w in
             let a = Self.fuzzyScore(pattern: q, target: w.appName.lowercased())
             let t = Self.fuzzyScore(pattern: q, target: w.title.lowercased())
-            guard let s = [a, t].compactMap({ $0 }).max() else { return nil }
+            let space = Self.fuzzyScore(pattern: q, target: (w.spaceLabel ?? "").lowercased())
+            guard let s = [a, t, space].compactMap({ $0 }).max() else { return nil }
             return (w, s)
+        }
+        return scored.sorted { $0.1 > $1.1 }.map { $0.0 }
+    }
+
+    var filteredBrowserTabs: [BrowserTab] {
+        let q = filterText.lowercased()
+        guard !q.isEmpty else { return browserTabs }
+        let scored: [(BrowserTab, Int)] = browserTabs.compactMap { tab in
+            guard let score = Self.fuzzyScore(pattern: q, target: tab.searchText) else { return nil }
+            return (tab, score)
         }
         return scored.sorted { $0.1 > $1.1 }.map { $0.0 }
     }
@@ -62,6 +74,7 @@ final class SwitchModel: ObservableObject {
         self.mode = mode
         quitPIDs.removeAll()
         filterText = ""
+        browserTabs = BrowserTabs.snapshot()
         pointerWindowID = nil
         armFrontmostPID = NSWorkspace.shared.frontmostApplication?.processIdentifier
         armSelfHadKeyWindow = NSApp.keyWindow != nil
@@ -394,6 +407,11 @@ final class SwitchModel: ObservableObject {
         teardown()
     }
 
+    func activateBrowserTab(_ tab: BrowserTab) {
+        BrowserTabs.activate(tab)
+        teardown()
+    }
+
     func cancel() {
         teardown()
     }
@@ -402,6 +420,7 @@ final class SwitchModel: ObservableObject {
         visible = false
         windows = []
         thumbnails = [:]
+        browserTabs = []
         filterText = ""
         stopRefreshTimer()
         thumbnailTasks.forEach { $0.cancel() }

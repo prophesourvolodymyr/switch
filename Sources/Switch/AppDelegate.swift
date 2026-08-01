@@ -37,7 +37,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var cancellables: Set<AnyCancellable> = []
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        NSApp.setActivationPolicy(.accessory)
+        NSApp.setActivationPolicy(.regular)
         AXUIElementSetMessagingTimeout(AXUIElementCreateSystemWide(), 0.5)
         #if DEBUG
         debugHarness.start()
@@ -303,7 +303,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 backing: .buffered,
                 defer: false
             )
-            win.title = "Switch"
+             win.title = "SwitchinTosh"
             win.contentViewController = host
             win.center()
             win.isReleasedWhenClosed = false
@@ -362,11 +362,14 @@ final class SwitcherWindow: NSPanel {
         hidesOnDeactivate = false
 
         let host = NSHostingView(rootView: SwitchView().environmentObject(model))
-        host.wantsLayer = true
-        host.layer?.cornerRadius = 12
-        host.layer?.cornerCurve = .continuous
-        host.layer?.masksToBounds = true
+        host.translatesAutoresizingMaskIntoConstraints = false
         contentView = host
+        NSLayoutConstraint.activate([
+            host.leadingAnchor.constraint(equalTo: contentView!.leadingAnchor),
+            host.trailingAnchor.constraint(equalTo: contentView!.trailingAnchor),
+            host.topAnchor.constraint(equalTo: contentView!.topAnchor),
+            host.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor)
+        ])
         applyContentSize()
     }
 

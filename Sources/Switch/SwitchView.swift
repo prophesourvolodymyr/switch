@@ -114,6 +114,9 @@ struct SwitchView: View {
         VStack(spacing: 0) {
             if showHeader { header }
             grid
+            if !model.filteredBrowserTabs.isEmpty && model.filterText.isEmpty {
+                browserTabStrip
+            }
             if prefs.showHintStrip { hintStrip }
         }
         .frame(width: model.panelSize.width, height: model.panelSize.height)
@@ -125,7 +128,12 @@ struct SwitchView: View {
                 VisualEffectBackdrop(material: prefs.backgroundBlur.nsMaterial, blendingMode: .behindWindow)
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .strokeBorder(Color.white.opacity(0.14), lineWidth: 1)
+                .allowsHitTesting(false)
+        }
         .scaleEffect(panelScale)
         .offset(y: panelYOffset)
         .opacity(model.visible ? 1 : 0)
@@ -221,6 +229,39 @@ struct SwitchView: View {
                 .foregroundStyle(.secondary)
         }
         .transition(.scale(scale: 0.98).combined(with: .opacity))
+    }
+
+    private var browserTabStrip: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text("BROWSER TABS")
+                .font(.system(size: 9, weight: .bold, design: .monospaced))
+                .foregroundStyle(.secondary)
+                .padding(.horizontal, 22)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 6) {
+                    ForEach(model.filteredBrowserTabs) { tab in
+                        Button {
+                            model.activateBrowserTab(tab)
+                        } label: {
+                            HStack(spacing: 5) {
+                                Image(systemName: "globe")
+                                Text(tab.title).lineLimit(1)
+                            }
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundStyle(.primary)
+                            .padding(.horizontal, 9)
+                            .padding(.vertical, 6)
+                            .background(Color.white.opacity(0.08))
+                            .clipShape(Capsule())
+                        }
+                        .buttonStyle(.plain)
+                        .help("\(tab.browserName) · \(tab.url)")
+                    }
+                }
+                .padding(.horizontal, 22)
+            }
+        }
+        .padding(.bottom, 8)
     }
 
     private var hintStrip: some View {

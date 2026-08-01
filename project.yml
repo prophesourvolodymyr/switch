@@ -1,4 +1,4 @@
-name: Switch
+name: SwitchinTosh
 options:
   bundleIdPrefix: com.sanyamgarg
   deploymentTarget:
@@ -12,10 +12,6 @@ settings:
     CODE_SIGN_STYLE: Manual
     CODE_SIGN_IDENTITY: "Developer ID Application"
     "CODE_SIGN_IDENTITY[sdk=macosx*]": "Developer ID Application"
-packages:
-  Sparkle:
-    url: https://github.com/sparkle-project/Sparkle
-    from: 2.0.0
 targets:
   Switch:
     type: application
@@ -23,13 +19,12 @@ targets:
     sources:
       - path: Sources/Switch
     dependencies:
-      - package: Sparkle
       - framework: /System/Library/PrivateFrameworks/SkyLight.framework
         embed: false
     settings:
       base:
-        PRODUCT_NAME: Switch
-        PRODUCT_BUNDLE_IDENTIFIER: com.sanyamgarg.switch
+        PRODUCT_NAME: SwitchinTosh
+        PRODUCT_BUNDLE_IDENTIFIER: com.tosh.switchintosh
         INFOPLIST_FILE: Sources/Switch/Resources/Info.plist
         ENABLE_HARDENED_RUNTIME: YES
         ENABLE_APP_SANDBOX: NO
@@ -39,4 +34,4 @@ targets:
         SWIFT_OBJC_BRIDGING_HEADER: Sources/Switch/Switch-Bridging-Header.h
       configs:
         Debug:
-          PRODUCT_BUNDLE_IDENTIFIER: com.sanyamgarg.switch.debug
+          PRODUCT_BUNDLE_IDENTIFIER:
