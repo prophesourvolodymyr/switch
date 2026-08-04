@@ -13,7 +13,7 @@ final class SettingsWindow {
 
     private init() {}
 
-    func show() {
+    func show(hostService: ControlHostService? = nil) {
         demoteWork?.cancel()
         demoteWork = nil
         // Stays .accessory: an inactive .regular app's activate() calls are ignored, breaking switching.
@@ -25,7 +25,7 @@ final class SettingsWindow {
             return
         }
 
-        let host = NSHostingController(rootView: SettingsView())
+        let host = NSHostingController(rootView: SettingsView(hostService: hostService))
         let win = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 500, height: 460),
             styleMask: [.titled, .closable],

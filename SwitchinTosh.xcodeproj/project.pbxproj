@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0E3D5EC57538FE5A13589F7B /* SwitchPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE977F5975B176C7D786534 /* SwitchPreferences.swift */; };
+		13BAC34E4030E0ED2F420CD2 /* ControlHostLifecycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A842EE23FA578D95693AEC /* ControlHostLifecycleTests.swift */; };
 		1B984B233A9A89439876455F /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB4243F7CE19624F4A0A30 /* OnboardingView.swift */; };
 		2005FCAE3A313D67669179C0 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D992384B8C749F20B334B65 /* SettingsWindow.swift */; };
 		2104F38BECE0120212511119 /* AboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB7D16B8D6A15560E1A64F9 /* AboutWindow.swift */; };
 		39256923C26D7D1CDA636765 /* WindowStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C5F057D8A4EFC1C8BE899 /* WindowStore.swift */; };
+		4133FAEF3142133FA8538498 /* CapabilityRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1DF76D9554EA22AE6E35D1 /* CapabilityRegistry.swift */; };
 		41E7A883F8F92BDAFB16BE5F /* SwitchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C063786609B14B2F38F1F8 /* SwitchModel.swift */; };
 		42098B7B863587B7D17478C2 /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B049C1D4C76CA96DFD217 /* SwitchView.swift */; };
 		470EEEB311D67EA1424B73CB /* ObjCException.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFABDBF0056C4239BF1745E /* ObjCException.m */; };
@@ -27,15 +29,32 @@
 		7700F5FD7670A3CAE3F9A088 /* VisualEffectBackdrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CED7A5955E33B9AB728E58 /* VisualEffectBackdrop.swift */; };
 		7995D5EEC87929409D0BCA9E /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D7721023CE3BCE4FFD2B9E /* Design.swift */; };
 		7DA1BFEF52FC2F2045825575 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD158C952F6D520A892742 /* OnboardingModel.swift */; };
+		8018C730BCD1945E55C0FC82 /* SettingsStoreBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A91CCC08BA3D24D1BF27C /* SettingsStoreBridge.swift */; };
 		8072882E1849688C40767878 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F968D3373084DE040848F /* StatusBarController.swift */; };
 		819C45B621C76AB15F1C7206 /* SwitchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F30BA684C9C92A3A615082 /* SwitchApp.swift */; };
+		9E5555F229C31E2F96A991E0 /* SwitchinToshCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8A69F39C7048927F8A92AF4E /* SwitchinToshCore */; };
+		A64A1D06C4E894ECB49AC586 /* F01ConnectionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B8A29CDEBC85C0FED647FF /* F01ConnectionSettingsView.swift */; };
+		B2D7225B40A4F56DEC544DFA /* ControlHostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE568277846C11A93169D9D /* ControlHostService.swift */; };
+		B8DA03322A604168C4EA921F /* ActionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E112BC17B78470A68D13DF /* ActionRouter.swift */; };
 		BBB1ADA09EAE85B93A02D965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C207A98FA09E1C50440EDAC /* Assets.xcassets */; };
 		BE727DF2F977F4A95AE0CA75 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A030195E1D4E0272310EEE20 /* SettingsView.swift */; };
+		C2A7A005BC8A07276191FE73 /* PairingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88228CB4353281D59E3BDA3 /* PairingCoordinator.swift */; };
 		C2FFBBFE35A97AC27E8DD2E4 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1368BB60CD05B55A72A96A7E /* HotkeyManager.swift */; };
 		C3618C36949278E3FD4D1511 /* WindowEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A95FDFE8787FA5496E162E5 /* WindowEnumerator.swift */; };
 		C3648145028D21FB0565CA8F /* DebugFocusHarness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B4A24497D3F23F94DE1921 /* DebugFocusHarness.swift */; };
+		CA5DF6B8C1D8DE195C4BBB87 /* SwitchinToshCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3A5C4E9E1D29517DDF250250 /* SwitchinToshCore */; };
 		DA618246746439F9C1F484CF /* BrowserTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BABF2FCBDC94ACE142CC2C2 /* BrowserTabs.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		639448E2576240D30E837952 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C749A6394B1DEA4311DF4D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DCBA8B4A39FD150A6FAD31D;
+			remoteInfo = Switch;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0B82C18224527032BF669113 /* Switch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Switch-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -43,6 +62,7 @@
 		15D7721023CE3BCE4FFD2B9E /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		1A95FDFE8787FA5496E162E5 /* WindowEnumerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowEnumerator.swift; sourceTree = "<group>"; };
 		1BFABDBF0056C4239BF1745E /* ObjCException.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCException.m; sourceTree = "<group>"; };
+		207A91CCC08BA3D24D1BF27C /* SettingsStoreBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreBridge.swift; sourceTree = "<group>"; };
 		2CCD158C952F6D520A892742 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		32A8E66FCA2CC28FF6F2024D /* HotkeyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyConfig.swift; sourceTree = "<group>"; };
 		3C9488339A819D27C7823C47 /* WindowMRU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowMRU.swift; sourceTree = "<group>"; };
@@ -52,6 +72,7 @@
 		4714327F67C42288C9AE07C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CC13B37B1C3C3C55EFC19DA /* WindowFocuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowFocuser.swift; sourceTree = "<group>"; };
 		4F698E5569D9F000DE5CB0B9 /* AXWindowCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AXWindowCache.swift; sourceTree = "<group>"; };
+		5C1DF76D9554EA22AE6E35D1 /* CapabilityRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapabilityRegistry.swift; sourceTree = "<group>"; };
 		641C5F057D8A4EFC1C8BE899 /* WindowStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowStore.swift; sourceTree = "<group>"; };
 		75EB4243F7CE19624F4A0A30 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		76B4A24497D3F23F94DE1921 /* DebugFocusHarness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugFocusHarness.swift; sourceTree = "<group>"; };
@@ -60,24 +81,40 @@
 		8BABF2FCBDC94ACE142CC2C2 /* BrowserTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTabs.swift; sourceTree = "<group>"; };
 		8C207A98FA09E1C50440EDAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		958689F0E031CA3624180407 /* PrivateSPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateSPI.swift; sourceTree = "<group>"; };
+		96B8A29CDEBC85C0FED647FF /* F01ConnectionSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F01ConnectionSettingsView.swift; sourceTree = "<group>"; };
+		984F780CBEC982E2297CF013 /* SwitchinToshCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwitchinToshCore; path = ../Packages/SwitchinToshCore; sourceTree = SOURCE_ROOT; };
 		9D992384B8C749F20B334B65 /* SettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
 		A030195E1D4E0272310EEE20 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B7A842EE23FA578D95693AEC /* ControlHostLifecycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlHostLifecycleTests.swift; sourceTree = "<group>"; };
+		BDE568277846C11A93169D9D /* ControlHostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlHostService.swift; sourceTree = "<group>"; };
 		C78A03CA4F31969A001BAF3C /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
 		C91B8E5998D236501EB89509 /* Switch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Switch.entitlements; sourceTree = "<group>"; };
 		D41DA36D06F1B3ADE8D2A2D1 /* WindowSnapshotter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSnapshotter.swift; sourceTree = "<group>"; };
+		D88228CB4353281D59E3BDA3 /* PairingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingCoordinator.swift; sourceTree = "<group>"; };
 		DFE977F5975B176C7D786534 /* SwitchPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchPreferences.swift; sourceTree = "<group>"; };
 		E19F968D3373084DE040848F /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		EAB7D16B8D6A15560E1A64F9 /* AboutWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindow.swift; sourceTree = "<group>"; };
 		EE7B049C1D4C76CA96DFD217 /* SwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		F1CED7A5955E33B9AB728E58 /* VisualEffectBackdrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBackdrop.swift; sourceTree = "<group>"; };
 		F9A3D8F9C36E6F8C1BEAC4E3 /* FocusTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTracker.swift; sourceTree = "<group>"; };
+		F9E112BC17B78470A68D13DF /* ActionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRouter.swift; sourceTree = "<group>"; };
+		FE46AE720576579E8E7E9115 /* SwitchHostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwitchHostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3597188F5EBEEE0FAB43AC7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E5555F229C31E2F96A991E0 /* SwitchinToshCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52A4D1D790D9742B3C068937 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5DF6B8C1D8DE195C4BBB87 /* SwitchinToshCore in Frameworks */,
 				49D35D672DDEEDD6D0EE02F9 /* SkyLight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,11 +134,15 @@
 			isa = PBXGroup;
 			children = (
 				EAB7D16B8D6A15560E1A64F9 /* AboutWindow.swift */,
+				F9E112BC17B78470A68D13DF /* ActionRouter.swift */,
 				4714327F67C42288C9AE07C9 /* AppDelegate.swift */,
 				4F698E5569D9F000DE5CB0B9 /* AXWindowCache.swift */,
 				8BABF2FCBDC94ACE142CC2C2 /* BrowserTabs.swift */,
+				5C1DF76D9554EA22AE6E35D1 /* CapabilityRegistry.swift */,
+				BDE568277846C11A93169D9D /* ControlHostService.swift */,
 				76B4A24497D3F23F94DE1921 /* DebugFocusHarness.swift */,
 				15D7721023CE3BCE4FFD2B9E /* Design.swift */,
+				96B8A29CDEBC85C0FED647FF /* F01ConnectionSettingsView.swift */,
 				F9A3D8F9C36E6F8C1BEAC4E3 /* FocusTracker.swift */,
 				32A8E66FCA2CC28FF6F2024D /* HotkeyConfig.swift */,
 				1368BB60CD05B55A72A96A7E /* HotkeyManager.swift */,
@@ -109,7 +150,9 @@
 				1BFABDBF0056C4239BF1745E /* ObjCException.m */,
 				2CCD158C952F6D520A892742 /* OnboardingModel.swift */,
 				75EB4243F7CE19624F4A0A30 /* OnboardingView.swift */,
+				D88228CB4353281D59E3BDA3 /* PairingCoordinator.swift */,
 				958689F0E031CA3624180407 /* PrivateSPI.swift */,
+				207A91CCC08BA3D24D1BF27C /* SettingsStoreBridge.swift */,
 				A030195E1D4E0272310EEE20 /* SettingsView.swift */,
 				9D992384B8C749F20B334B65 /* SettingsWindow.swift */,
 				E19F968D3373084DE040848F /* StatusBarController.swift */,
@@ -129,6 +172,30 @@
 			path = Switch;
 			sourceTree = "<group>";
 		};
+		4156AD2BF47A3829A9D5D85C /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				984F780CBEC982E2297CF013 /* SwitchinToshCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		49B6A5D6A0880064D61EA9CC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				61843AD82D2FA325C91D2F96 /* SwitchHostTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		61843AD82D2FA325C91D2F96 /* SwitchHostTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7A842EE23FA578D95693AEC /* ControlHostLifecycleTests.swift */,
+			);
+			path = SwitchHostTests;
+			sourceTree = "<group>";
+		};
 		64237B8600451F330C28421D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +207,9 @@
 		7E590282AEF9054F1344BCD2 = {
 			isa = PBXGroup;
 			children = (
+				4156AD2BF47A3829A9D5D85C /* Packages */,
 				1B255707111913D4CB4CB418 /* Sources */,
+				49B6A5D6A0880064D61EA9CC /* Tests */,
 				64237B8600451F330C28421D /* Frameworks */,
 				B68B822810B33D72B9C2887C /* Products */,
 			);
@@ -160,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				41A6A143AE7ABB275073C88B /* Switch.app */,
+				FE46AE720576579E8E7E9115 /* SwitchHostTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,10 +251,31 @@
 			);
 			name = Switch;
 			packageProductDependencies = (
+				3A5C4E9E1D29517DDF250250 /* SwitchinToshCore */,
 			);
 			productName = Switch;
 			productReference = 41A6A143AE7ABB275073C88B /* Switch.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6C83F677BEF4D5F2558DD9C5 /* SwitchHostTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F14B14930F39739C48ED0D64 /* Build configuration list for PBXNativeTarget "SwitchHostTests" */;
+			buildPhases = (
+				E575CC121959E3877A34C100 /* Sources */,
+				3597188F5EBEEE0FAB43AC7B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F2F9AA43D96DAD0120EFE15 /* PBXTargetDependency */,
+			);
+			name = SwitchHostTests;
+			packageProductDependencies = (
+				8A69F39C7048927F8A92AF4E /* SwitchinToshCore */,
+			);
+			productName = SwitchHostTests;
+			productReference = FE46AE720576579E8E7E9115 /* SwitchHostTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -199,6 +290,10 @@
 						DevelopmentTeam = WCAFS55H9G;
 						ProvisioningStyle = Manual;
 					};
+					6C83F677BEF4D5F2558DD9C5 = {
+						DevelopmentTeam = WCAFS55H9G;
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = 10ED5360B7422DBF321D2030 /* Build configuration list for PBXProject "SwitchinTosh" */;
@@ -210,12 +305,16 @@
 			);
 			mainGroup = 7E590282AEF9054F1344BCD2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				50ACF84DB611371A211B7D97 /* XCLocalSwiftPackageReference "../Packages/SwitchinToshCore" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B68B822810B33D72B9C2887C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1DCBA8B4A39FD150A6FAD31D /* Switch */,
+				6C83F677BEF4D5F2558DD9C5 /* SwitchHostTests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,17 +337,23 @@
 			files = (
 				584A27E23FE8CEA504E6DDEF /* AXWindowCache.swift in Sources */,
 				2104F38BECE0120212511119 /* AboutWindow.swift in Sources */,
+				B8DA03322A604168C4EA921F /* ActionRouter.swift in Sources */,
 				5E9678A79E4F27B4D998FEE9 /* AppDelegate.swift in Sources */,
 				DA618246746439F9C1F484CF /* BrowserTabs.swift in Sources */,
+				4133FAEF3142133FA8538498 /* CapabilityRegistry.swift in Sources */,
+				B2D7225B40A4F56DEC544DFA /* ControlHostService.swift in Sources */,
 				C3648145028D21FB0565CA8F /* DebugFocusHarness.swift in Sources */,
 				7995D5EEC87929409D0BCA9E /* Design.swift in Sources */,
+				A64A1D06C4E894ECB49AC586 /* F01ConnectionSettingsView.swift in Sources */,
 				76363F26B2DEB5187213C199 /* FocusTracker.swift in Sources */,
 				643CA8425EB0B7577A8EF264 /* HotkeyConfig.swift in Sources */,
 				C2FFBBFE35A97AC27E8DD2E4 /* HotkeyManager.swift in Sources */,
 				470EEEB311D67EA1424B73CB /* ObjCException.m in Sources */,
 				7DA1BFEF52FC2F2045825575 /* OnboardingModel.swift in Sources */,
 				1B984B233A9A89439876455F /* OnboardingView.swift in Sources */,
+				C2A7A005BC8A07276191FE73 /* PairingCoordinator.swift in Sources */,
 				4F53E92DFE600C8813B56CF4 /* PrivateSPI.swift in Sources */,
+				8018C730BCD1945E55C0FC82 /* SettingsStoreBridge.swift in Sources */,
 				BE727DF2F977F4A95AE0CA75 /* SettingsView.swift in Sources */,
 				2005FCAE3A313D67669179C0 /* SettingsWindow.swift in Sources */,
 				8072882E1849688C40767878 /* StatusBarController.swift in Sources */,
@@ -265,7 +370,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E575CC121959E3877A34C100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13BAC34E4030E0ED2F420CD2 /* ControlHostLifecycleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0F2F9AA43D96DAD0120EFE15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1DCBA8B4A39FD150A6FAD31D /* Switch */;
+			targetProxy = 639448E2576240D30E837952 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		00937A2298E3EA60CFE00AF3 /* Debug */ = {
@@ -334,6 +455,22 @@
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
+		};
+		18A19FA995425248879F951C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tosh.switchintosh.host-tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwitchinTosh.app/Contents/MacOS/SwitchinTosh";
+			};
+			name = Release;
 		};
 		2044DF25B5DE7D28E79A7F7E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -416,6 +553,22 @@
 			};
 			name = Debug;
 		};
+		69B13B42B512CEEB3F386DD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tosh.switchintosh.host-tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwitchinTosh.app/Contents/MacOS/SwitchinTosh";
+			};
+			name = Debug;
+		};
 		98EDD0AF1F854515068F8488 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -458,7 +611,34 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		F14B14930F39739C48ED0D64 /* Build configuration list for PBXNativeTarget "SwitchHostTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69B13B42B512CEEB3F386DD4 /* Debug */,
+				18A19FA995425248879F951C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		50ACF84DB611371A211B7D97 /* XCLocalSwiftPackageReference "../Packages/SwitchinToshCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Packages/SwitchinToshCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A5C4E9E1D29517DDF250250 /* SwitchinToshCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwitchinToshCore;
+		};
+		8A69F39C7048927F8A92AF4E /* SwitchinToshCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwitchinToshCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6C749A6394B1DEA4311DF4D3 /* Project object */;
 }

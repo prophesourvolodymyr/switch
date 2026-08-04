@@ -105,7 +105,7 @@ final class SettingsModel: ObservableObject {
 }
 
 private enum SettingsTab: String, CaseIterable, Identifiable {
-    case general, picker, permissions, appearance, about
+    case general, picker, permissions, appearance, connection, about
     var id: String { rawValue }
     var label: String {
         switch self {
@@ -113,18 +113,25 @@ private enum SettingsTab: String, CaseIterable, Identifiable {
         case .picker: return "Picker"
         case .permissions: return "Permissions"
         case .appearance: return "Appearance"
+        case .connection: return "Connection"
         case .about: return "About"
         }
     }
 }
 
+
 struct SettingsView: View {
     @StateObject private var model = SettingsModel()
     @ObservedObject private var prefs = SwitchPreferences.shared
+    let hostService: ControlHostService?
     @State private var rejectMessage: String?
     @State private var tab: SettingsTab = .general
     @State private var draggedApp: String?
     @State private var openWindows: [WindowInfo] = []
+
+    init(hostService: ControlHostService? = nil) {
+        self.hostService = hostService
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -136,6 +143,13 @@ struct SettingsView: View {
                 case .picker:      pickerTab
                 case .permissions: permissionsTab
                 case .appearance:  appearanceTab
+                case .connection:
+                    if let hostService {
+                        F01ConnectionSettingsView(service: hostService)
+                    } else {
+                        Text("Connection service unavailable.")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
                 case .about:       AboutView()
                 }
             }

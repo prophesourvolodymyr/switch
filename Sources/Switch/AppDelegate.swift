@@ -25,6 +25,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var onboardingModel: OnboardingModel?
     private var onboardingWindow: NSWindow?
     private var focusTracker: FocusTracker?
+    private var hostService: ControlHostService?
     private var hotkeyStarted = false
     private var focusTrackerStarted = false
     #if DEBUG
@@ -114,8 +115,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         hotkey.onStickyToggle = {
             SwitchPreferences.shared.stickyMode.toggle()
         }
-        hotkey.onOpenSettings = {
-            MainActor.assumeIsolated { SettingsWindow.shared.show() }
+        hotkey.onOpenSettings = { [weak self] in
+            MainActor.assumeIsolated { SettingsWindow.shared.show(hostService: self?.hostService) }
         }
 
         SwitchPreferences.shared.$verticalList
@@ -151,6 +152,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         self.statusBar = StatusBarController()
         self.onboardingModel = OnboardingModel()
         self.focusTracker = FocusTracker()
+        self.hostService = ControlHostService()
+        self.hostService?.start()
 
         NotificationCenter.default.addObserver(
             self, selector: #selector(showOnboarding),
@@ -228,11 +231,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
+    func applicationWillTerminate(_ notification: Notification) {
+        hostService?.stop()
+        permsTimer?.invalidate()
+        armedWatchdog?.invalidate()
+        pendingPresent?.cancel()
+        if let clickAwayMonitor {
+            NSEvent.removeMonitor(clickAwayMonitor)
+            self.clickAwayMonitor = nil
+        }
+    }
+
     // Relaunching while already running reopens Settings and restores the menu bar icon if it was dragged off.
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         statusBar?.setHidden(UserDefaults.standard.bool(forKey: SwitchPreferences.hideMenuBarIconKey))
         if requiredPermissionsGranted {
-            SettingsWindow.shared.show()
+            SettingsWindow.shared.show(hostService: hostService)
         } else {
             showOnboarding()
         }

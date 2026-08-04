@@ -40,5 +40,11 @@
 	<string>CUEAR32bfkJ9r4M3C9Nig6Lvd+5qGEya51Dp/t8oTyk=</string>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>SwitchinTosh uses your local network to find and control this Mac from an iPhone.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_switchintosh._tcp</string>
+	</array>
 </dict>
 </plist>

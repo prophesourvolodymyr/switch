@@ -12,6 +12,9 @@ settings:
     CODE_SIGN_STYLE: Manual
     CODE_SIGN_IDENTITY: "Developer ID Application"
     "CODE_SIGN_IDENTITY[sdk=macosx*]": "Developer ID Application"
+packages:
+  SwitchinToshCore:
+    path: ../Packages/SwitchinToshCore
 targets:
   Switch:
     type: application
@@ -19,6 +22,7 @@ targets:
     sources:
       - path: Sources/Switch
     dependencies:
+      - package: SwitchinToshCore
       - framework: /System/Library/PrivateFrameworks/SkyLight.framework
         embed: false
     settings:
@@ -35,3 +39,26 @@ targets:
       configs:
         Debug:
           PRODUCT_BUNDLE_IDENTIFIER:
+
+  SwitchHostTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests/SwitchHostTests
+    dependencies:
+      - target: Switch
+      - package: SwitchinToshCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tosh.switchintosh.host-tests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SwitchinTosh.app/Contents/MacOS/SwitchinTosh"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+
+schemes:
+  Switch:
+    build:
+      targets:
+        Switch: all
+    test:
+      targets:
+        - SwitchHostTests
